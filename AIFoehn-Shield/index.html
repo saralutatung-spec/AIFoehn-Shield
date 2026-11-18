@@ -417,6 +417,15 @@
                             >
                                 ⏯️ 播放／暫停
                             </button>
+                            <button 
+                                type="button" 
+                                id="reset-video-btn" 
+                                class="px-3 py-2 rounded-xl bg-red-50 hover:bg-red-100 text-red-700 text-xs font-bold border border-red-200 transition-colors cursor-pointer flex items-center gap-1"
+                                title="清除目前上傳的影片，重置回預設果園監視器畫面"
+                            >
+                                <span>🔄</span>
+                                <span>重設／清除影片</span>
+                            </button>
                         </div>
 
                         <!-- 抽樣關鍵幀展示條 -->
@@ -1382,6 +1391,7 @@
             const cctvVideoInput = document.getElementById('cctv-video-input');
             const uploadVideoBtn = document.getElementById('upload-video-btn');
             const toggleVideoPlaybackBtn = document.getElementById('toggle-video-playback-btn');
+            const resetVideoBtn = document.getElementById('reset-video-btn');
             const sampleBananaVideoBtn = document.getElementById('sample-banana-video-btn');
             const sampleOrchardCctvBtn = document.getElementById('sample-orchard-cctv-btn');
             const runVideoAiBtn = document.getElementById('run-video-ai-btn');
@@ -1588,6 +1598,35 @@
                 }
             });
 
+            // 一鍵重設／清除自訂視訊回到預設監控
+            function resetCctvToDefault() {
+                if (isCustomVideoLoaded) {
+                    cctvVideoPlayer.pause();
+                    cctvVideoPlayer.src = '';
+                    cctvVideoPlayer.classList.add('hidden');
+                }
+                cctvVideoInput.value = '';
+                isCustomVideoLoaded = false;
+                currentVideoScenario = 'orchard';
+                cctvSimCanvas.classList.remove('hidden');
+
+                cctvCamTag.textContent = 'CAM-01 [太麻里A01·迎風面鏡頭]';
+                cctvTrackingText.textContent = '微風樹冠與微霧鎖定中';
+                cctvStatusBadge.textContent = '訊號良好 · 30 FPS';
+                hudMetricSunburn.textContent = '最佳賞味';
+                hudMetricWind.textContent = '微風穩定';
+                hudMetricMist.textContent = '94.2%';
+
+                if (!simAnimFrame) drawSimulatedCctvFrame();
+                setTimeout(captureKeyframesFromView, 250);
+
+                if (videoResultBox) videoResultBox.classList.add('hidden');
+            }
+
+            if (resetVideoBtn) {
+                resetVideoBtn.addEventListener('click', resetCctvToDefault);
+            }
+
             // 示範 1：7-11 嚴選香蕉動態掃描
             sampleBananaVideoBtn.addEventListener('click', () => {
                 isCustomVideoLoaded = false;
@@ -1643,7 +1682,7 @@
                             contents: [{
                                 role: "user",
                                 parts: [
-                                    { text: "這是從農園 24H 監視器或農民手機拍攝的實拍短片中抽樣出的關鍵畫面。請以智慧農業巡檢專家角度進行『動態視訊診斷』：1. 辨識畫面中的主要作物（是 7-11 購買的香蕉、還是大目釋迦）；2. 評估其成熟度、黑斑（是糖斑還是病害/日燒焦斑）、表面水分與新鮮度；3. 提出無人化巡檢結論與分級食用/採收建議。請以親切專業的繁體中文條列呈現！" },
+                                    { text: "這是從農園 24H 監視器或農民手機拍攝的實拍短片中抽樣出的關鍵畫面。請以智慧農業巡檢專家角度進行『動態視訊診斷』：1. 辨識畫面中的主要作物（例如大目釋迦、香蕉、蘋果、芒果、柑橘或任何生鮮蔬果）；2. 評估其成熟度、黑斑（是健康糖斑、還是病害／高溫日燒焦斑）、表面水分與新鮮度；3. 提出無人化巡檢結論、分級標價與食用／採收建議。請以親切專業的繁體中文條列呈現！" },
                                     {
                                         inlineData: {
                                             mimeType: "image/png",
