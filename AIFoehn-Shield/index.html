@@ -989,7 +989,7 @@
                     </div>
                     <div>
                         <div class="flex items-center gap-1.5">
-                            <h3 class="font-bold text-sm sm:text-base tracking-wide">台東黑熊守護員 · 小熊</h3>
+                            <h3 class="font-bold text-sm sm:text-base tracking-wide">熊熊守護員 · 小熊</h3>
                             <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" title="AI 在線服務中"></span>
                         </div>
                         <p class="text-xs text-agri-100">釋迦防禦與產銷知識 AI 客服</p>
@@ -1013,7 +1013,7 @@
                         熊
                     </div>
                     <div class="bg-white border border-slate-200 text-slate-800 rounded-2xl rounded-tl-none px-3.5 py-2.5 shadow-sm leading-relaxed">
-                        哈囉！我是台東黑熊守護員 🐻🌿<br>
+                        哈囉！我是熊熊守護員 🐻🌿<br>
                         您可以問我<strong>「好時果子農園」</strong>、<strong>「2026 焚風紀錄」</strong>、<strong>「防呆保護機制」</strong>、<strong>「LINE 遠端操作」</strong>或<strong>「監視器影片 AI 巡檢」</strong>喔！
                     </div>
                 </div>
@@ -2054,7 +2054,7 @@
                                     contents: [{
                                         role: "user",
                                         parts: [
-                                            { text: "請以台東黑熊守護員身分，看這張使用者上傳的水果照片（可能是香蕉或釋迦）。請詳細說明熟度、日燒損害狀況與分級建議，語氣要親切專業帶有熊的特色！" },
+                                            { text: "請以專業且親切的「熊熊守護員」身分，分析這張使用者上傳的水果照片（可能是釋迦、香蕉或生鮮蔬果）。請一律自稱「熊熊守護員」或「小熊」（【切勿自稱老熊或使用年邁老氣口吻】），詳細說明品種熟度、日燒受損狀況與分級產銷建議，語氣要專業嚴謹、溫暖且具有守護員責任感！" },
                                             { inlineData: { mimeType: mimeType, data: base64Data } }
                                         ]
                                     }]
@@ -2248,8 +2248,9 @@
                     return getLocalKnowledgeReply(userMessage);
                 }
 
-                const systemPrompt = `你是「智慧台東：大目釋迦焚風預警與自動化防禦平台 - 釋迦守護者 (AIFoehn-Shield)」的可愛台灣黑熊吉祥物兼 AI 客服小幫手，名字叫「台東黑熊守護員（小熊）」。
-請用親切、溫暖、有活力且專業的台灣繁體中文回答（約 80~150 字內）。你熟知果園 24H 監視器與手機實拍短片（如 7-11 香蕉）動態 AI 巡檢技術、好時果子合作案例、2026 年臺東 5 次重大焚風事件、36°C 自動啟動微霧降溫、防呆機制與 LINE 官方帳號 @413asgvo。`;
+                const systemPrompt = `你是「智慧台東：大目釋迦焚風預警與自動化防禦平台 - 釋迦守護者 (AIFoehn-Shield)」的專業農業 AI 守護員，稱呼為「熊熊守護員（小熊）」。
+【請注意稱呼規範】：請一律自稱「熊熊守護員」或「小熊」，展現專業農業巡檢員的自信、溫暖與責任感，【絕對不可自稱老熊或使用年邁老氣口吻】。
+請用親切、溫暖、有活力且專業的台灣繁體中文回答（約 80~150 字內）。你熟知果園 24H 監視器與手機實拍短片動態 AI 巡檢技術、好時果子合作案例、2026 年臺東 5 次重大焚風事件、36°C 自動啟動微霧降溫、防呆機制與 LINE 官方帳號 @413asgvo。`;
 
                 chatHistory.push({ role: 'user', parts: [{ text: userMessage }] });
 
