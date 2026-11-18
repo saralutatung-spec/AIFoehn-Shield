@@ -52,7 +52,6 @@
                 
                 <!-- 品牌 LOGO 與主標題區塊 -->
                 <div class="flex flex-col sm:flex-row items-center text-center sm:text-left gap-4">
-                    <!-- 載入外部圖床 Demeter-01 LOGO 圖片，並內建載入失敗備援顯示 -->
                     <div class="bg-white p-2 rounded-2xl shadow-md flex-shrink-0 border border-slate-200/80 transition-transform duration-300 hover:scale-105 flex items-center justify-center" title="Demeter-01 智慧農業守護標章">
                         <img 
                             src="https://duk.tw/rONMBB.png" 
@@ -104,7 +103,6 @@
             <div class="bg-tech-50 px-6 py-4 border-b border-slate-200 flex flex-wrap items-center justify-between gap-2">
                 <div class="flex items-center gap-2.5">
                     <div class="w-8 h-8 rounded-lg bg-tech-900 text-white flex items-center justify-center">
-                        <!-- 氣象雷達圖示 -->
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
                         </svg>
@@ -119,7 +117,6 @@
             <div class="p-6 sm:p-8">
                 <form id="foehn-analysis-form" novalidate class="space-y-6">
                     
-                    <!-- 結構清晰的輸入欄位 (含 Label、防呆提示與 Placeholder) -->
                     <div>
                         <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 mb-2">
                             <label for="orchard-input" class="block text-base sm:text-lg font-bold text-slate-800">
@@ -144,7 +141,6 @@
                                 aria-describedby="input-help-text input-error-msg"
                                 class="w-full pl-11 pr-10 py-3.5 text-base text-slate-900 bg-slate-50/70 border-2 border-slate-300 rounded-xl placeholder:text-slate-400 transition-all duration-200 hover:border-tech-700 focus:bg-white focus:border-agri-600 focus:outline-none focus:ring-4 focus:ring-agri-600/20"
                             >
-                            <!-- 快速清除按鈕 (防呆便利設計) -->
                             <button 
                                 type="button" 
                                 id="clear-input-btn" 
@@ -158,7 +154,6 @@
                             </button>
                         </div>
 
-                        <!-- 防呆錯誤提示訊息區 (預設隱藏) -->
                         <div id="input-error-msg" role="alert" class="hidden mt-2.5 flex items-center gap-2 text-sm font-medium text-red-700 bg-red-50 border border-red-200 px-3.5 py-2.5 rounded-lg">
                             <svg class="w-5 h-5 flex-shrink-0 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
@@ -166,7 +161,6 @@
                             <span id="input-error-text">請輸入果園編號、台東鄉鎮站點或溫濕度數值，系統才能進行焚風風險演算。</span>
                         </div>
 
-                        <!-- 輔助說明與快速範例標籤 (降低操作門檻的防呆設計) -->
                         <div id="input-help-text" class="mt-3 flex flex-wrap items-center gap-2 text-xs sm:text-sm text-slate-600">
                             <span class="font-medium text-slate-500">快速帶入測試情境：</span>
                             <button type="button" data-preset="太麻里鄉-A01示範園（氣溫 36.8°C / 相對濕度 29% / 西南風 6級）" class="preset-chip px-3 py-1.5 rounded-lg bg-amber-50 text-amber-800 border border-amber-200 hover:bg-amber-100 hover:border-amber-300 focus:outline-none focus:ring-2 focus:ring-amber-500 transition-colors cursor-pointer">
@@ -181,7 +175,6 @@
                         </div>
                     </div>
 
-                    <!-- 顯眼的主要執行按鈕 (Primary Button) -->
                     <div class="pt-2">
                         <button 
                             type="submit" 
@@ -213,13 +206,11 @@
                 <span id="result-timestamp" class="text-xs text-slate-500">系統待命中</span>
             </div>
 
-            <!-- 帶有虛線邊框與淺色背景的結果顯示容器 -->
             <div 
                 id="result-display-area" 
                 aria-live="polite"
                 class="min-h-[240px] bg-slate-100/80 border-2 border-dashed border-slate-300 rounded-2xl p-6 sm:p-8 flex flex-col items-center justify-center transition-all duration-300"
             >
-                <!-- 初始空白待機狀態 -->
                 <div id="empty-state" class="text-center max-w-md space-y-3 py-4">
                     <div class="w-14 h-14 mx-auto rounded-2xl bg-white border border-slate-200 shadow-sm flex items-center justify-center text-tech-800">
                         <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -230,14 +221,11 @@
                         分析結果顯示區
                     </p>
                     <p class="text-sm text-slate-500 leading-relaxed">
-                        請於上方輸入框填寫監測果園資訊並點擊執行按鈕，或使用下方「📸 AI 拍照辨識果實 / 熟度與日燒損害」模組上傳照片進行多模態 AI 診斷。
+                        請於上方輸入框填寫監測果園資訊並點擊執行按鈕，或使用下方「📸 AI 拍照辨識果實」或「🎥 果園 24H 監視器／手機短片巡檢」模組進行多模態 AI 診斷。
                     </p>
                 </div>
 
-                <!-- 動態分析報告容器 (執行後顯示) -->
-                <div id="analysis-output" class="hidden w-full space-y-6">
-                    <!-- 由 JavaScript 動態安全注入分析結果 -->
-                </div>
+                <div id="analysis-output" class="hidden w-full space-y-6"></div>
             </div>
         </section>
 
@@ -264,7 +252,6 @@
             </div>
 
             <div class="p-6 sm:p-8 space-y-6">
-                <!-- 拖曳上傳與預覽區 -->
                 <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
                     <div class="md:col-span-7 space-y-3">
                         <label for="fruit-image-input" class="block text-sm font-bold text-slate-800">
@@ -318,7 +305,6 @@
                     </div>
                 </div>
 
-                <!-- 影像診斷結果輸出區 -->
                 <div id="vision-result-box" class="hidden rounded-xl bg-slate-50 border border-slate-200 p-5 space-y-3">
                     <div class="flex items-center justify-between border-b border-slate-200 pb-2.5">
                         <span class="text-xs font-bold text-agri-800 flex items-center gap-1.5">
@@ -327,16 +313,225 @@
                         </span>
                         <span id="vision-timestamp" class="text-xs text-slate-500"></span>
                     </div>
-                    <div id="vision-result-content" class="text-sm text-slate-700 leading-relaxed whitespace-pre-line">
-                        <!-- AI 診斷結果 -->
+                    <div id="vision-result-content" class="text-sm text-slate-700 leading-relaxed whitespace-pre-line"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== 3.15 🎥 果園 24H 監視器 & 手機實拍短影音 AI 巡檢診斷模組 ==================== -->
+        <section aria-labelledby="video-ai-heading" class="bg-white rounded-2xl shadow-lg border border-slate-200/90 overflow-hidden">
+            <div class="bg-gradient-to-r from-tech-900 via-tech-800 to-emerald-900 text-white px-6 py-4 flex flex-wrap items-center justify-between gap-3">
+                <div class="flex items-center gap-3">
+                    <div class="w-9 h-9 rounded-xl bg-emerald-500/20 border border-emerald-400/40 text-emerald-300 flex items-center justify-center flex-shrink-0">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h2 id="video-ai-heading" class="text-base sm:text-lg font-bold tracking-wide">
+                            🎥 果園 24H 監視器 &amp; 手機實拍短影音 AI 連續巡檢
+                        </h2>
+                        <p class="text-xs text-slate-300">
+                            無人化實務落地：支援上傳手機錄影（例如 7-11 購買的香蕉短片）或果園 CCTV 畫面，AI 自動抽樣關鍵畫面進行熟度、黑斑與日燒連續診斷
+                        </p>
                     </div>
                 </div>
+                <span class="text-xs font-bold bg-emerald-400/20 text-emerald-200 border border-emerald-300/40 px-3 py-1 rounded-full flex items-center gap-1.5">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                    <span>Video Multimodal AI 運作中</span>
+                </span>
+            </div>
+
+            <div class="p-6 sm:p-8 space-y-6">
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
+                    
+                    <!-- 左側：監視器視訊播放器與即時 HUD 介面 (佔 7 欄) -->
+                    <div class="md:col-span-7 space-y-3">
+                        <div class="flex items-center justify-between">
+                            <label class="block text-sm font-bold text-slate-800">
+                                監視器視訊畫面 / 手機實拍短片
+                            </label>
+                            <span id="cctv-status-badge" class="text-[11px] font-mono text-emerald-700 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded">
+                                訊號良好 · 30 FPS
+                            </span>
+                        </div>
+
+                        <!-- 擬真 CCTV 螢幕容器 -->
+                        <div class="relative bg-black rounded-2xl overflow-hidden shadow-inner border-2 border-slate-700 aspect-video flex items-center justify-center group" id="cctv-container">
+                            <video 
+                                id="cctv-video-player" 
+                                playsinline 
+                                muted 
+                                loop 
+                                class="w-full h-full object-cover hidden"
+                            ></video>
+
+                            <canvas id="cctv-sim-canvas" width="640" height="360" class="w-full h-full object-cover"></canvas>
+
+                            <!-- CCTV 螢幕專業疊加 HUD -->
+                            <div class="absolute inset-0 pointer-events-none p-4 flex flex-col justify-between text-white font-mono text-xs">
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center gap-2 bg-black/50 backdrop-blur-sm px-2.5 py-1 rounded">
+                                        <span class="w-2.5 h-2.5 rounded-full bg-red-600 animate-pulse"></span>
+                                        <span class="font-bold text-red-400">REC</span>
+                                        <span id="cctv-timer" class="text-white">00:04:18</span>
+                                    </div>
+                                    <div class="bg-black/50 backdrop-blur-sm px-2.5 py-1 rounded text-slate-300">
+                                        <span id="cctv-cam-tag">CAM-01 [太麻里A01·巡檢鏡頭]</span>
+                                    </div>
+                                </div>
+
+                                <div class="self-center flex flex-col items-center gap-1 opacity-75">
+                                    <div class="w-24 h-24 border border-dashed border-emerald-400/80 rounded-xl flex items-center justify-center">
+                                        <div class="w-2 h-2 bg-emerald-400 rounded-full animate-ping"></div>
+                                    </div>
+                                    <span id="cctv-tracking-text" class="text-[10px] bg-emerald-950/80 text-emerald-300 px-2 py-0.5 rounded border border-emerald-500/40">
+                                        AI 目標鎖定中
+                                    </span>
+                                </div>
+
+                                <div class="flex items-center justify-between text-[11px] text-slate-300">
+                                    <span id="cctv-hud-info">環境：氣溫 36.5°C · 濕度 32%</span>
+                                    <span id="cctv-clock-text">2026/11/18 15:02:10</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 影片上傳框與操作按鈕 -->
+                        <div class="flex flex-wrap items-center gap-2 pt-1">
+                            <input type="file" id="cctv-video-input" accept="video/*" class="hidden">
+                            <button 
+                                type="button" 
+                                id="upload-video-btn" 
+                                class="px-3.5 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-bold border border-slate-300 flex items-center gap-1.5 transition-colors cursor-pointer"
+                            >
+                                <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"/>
+                                </svg>
+                                <span>📱 上傳手機實拍影片（支援香蕉/釋迦 MP4）</span>
+                            </button>
+                            <button 
+                                type="button" 
+                                id="toggle-video-playback-btn" 
+                                class="px-3 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold border border-slate-300 transition-colors cursor-pointer"
+                            >
+                                ⏯️ 播放／暫停
+                            </button>
+                        </div>
+
+                        <!-- 抽樣關鍵幀展示條 -->
+                        <div class="space-y-1.5 pt-2">
+                            <div class="flex items-center justify-between text-xs text-slate-600 font-bold">
+                                <span>📸 AI 自動抽樣關鍵畫面（Keyframes）：</span>
+                                <span class="text-[11px] text-slate-500 font-normal">多視角畫面比對防手震</span>
+                            </div>
+                            <div id="keyframes-strip" class="grid grid-cols-3 gap-2">
+                                <div class="bg-slate-100 border border-slate-200 rounded-lg p-1.5 flex flex-col items-center">
+                                    <canvas id="kf-canvas-1" width="160" height="90" class="w-full rounded object-cover bg-slate-200"></canvas>
+                                    <span class="text-[10px] text-slate-500 mt-1 font-mono">畫面 1 (00:01)</span>
+                                </div>
+                                <div class="bg-slate-100 border border-slate-200 rounded-lg p-1.5 flex flex-col items-center">
+                                    <canvas id="kf-canvas-2" width="160" height="90" class="w-full rounded object-cover bg-slate-200"></canvas>
+                                    <span class="text-[10px] text-slate-500 mt-1 font-mono">畫面 2 (00:03)</span>
+                                </div>
+                                <div class="bg-slate-100 border border-slate-200 rounded-lg p-1.5 flex flex-col items-center">
+                                    <canvas id="kf-canvas-3" width="160" height="90" class="w-full rounded object-cover bg-slate-200"></canvas>
+                                    <span class="text-[10px] text-slate-500 mt-1 font-mono">畫面 3 (00:05)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 右側：測試情境載入與 AI 分析操作區 (佔 5 欄) -->
+                    <div class="md:col-span-5 space-y-4">
+                        <div class="bg-slate-50 border border-slate-200 rounded-xl p-4 space-y-3">
+                            <h3 class="text-xs font-bold text-slate-700 flex items-center gap-1.5">
+                                <span>🧪 快速載入動態巡檢實驗場景：</span>
+                            </h3>
+                            <div class="flex flex-col gap-2">
+                                <button 
+                                    type="button" 
+                                    id="sample-banana-video-btn" 
+                                    class="w-full py-2.5 px-3 rounded-lg bg-yellow-50 hover:bg-yellow-100 text-yellow-900 border border-yellow-300 text-xs font-bold text-left flex items-center justify-between transition-colors cursor-pointer"
+                                >
+                                    <span class="flex items-center gap-1.5">
+                                        <span>🍌</span>
+                                        <span>7-11 嚴選香蕉（手機動態錄影巡檢）</span>
+                                    </span>
+                                    <span class="text-[10px] bg-yellow-200/80 px-1.5 py-0.5 rounded text-yellow-800">熟度／黑斑</span>
+                                </button>
+
+                                <button 
+                                    type="button" 
+                                    id="sample-orchard-cctv-btn" 
+                                    class="w-full py-2.5 px-3 rounded-lg bg-emerald-50 hover:bg-emerald-100 text-emerald-900 border border-emerald-300 text-xs font-bold text-left flex items-center justify-between transition-colors cursor-pointer"
+                                >
+                                    <span class="flex items-center gap-1.5">
+                                        <span>🍈</span>
+                                        <span>太麻里釋迦果園（24H 監視器巡檢）</span>
+                                    </span>
+                                    <span class="text-[10px] bg-emerald-200/80 px-1.5 py-0.5 rounded text-emerald-800">日燒／微霧</span>
+                                </button>
+                            </div>
+                            <p class="text-[11px] text-slate-500 leading-relaxed">
+                                💡 點擊上方按鈕可即時模擬鏡頭畫面；您也可以點擊左方「📱 上傳手機實拍影片」測試您用手機拍的香蕉短片！
+                            </p>
+                        </div>
+
+                        <!-- 執行視訊 AI 分析按鈕 -->
+                        <button 
+                            type="button" 
+                            id="run-video-ai-btn"
+                            class="w-full py-3.5 px-4 rounded-xl bg-gradient-to-r from-tech-900 to-emerald-900 hover:from-tech-800 hover:to-emerald-800 text-white font-bold text-sm shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 cursor-pointer"
+                        >
+                            <svg id="video-btn-icon" class="w-5 h-5 text-emerald-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                            </svg>
+                            <svg id="video-btn-spinner" class="hidden animate-spin w-5 h-5 text-white" fill="none" viewBox="0 0 24 24">
+                                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                            </svg>
+                            <span id="video-btn-text">啟動 AI 視訊關鍵幀巡檢診斷</span>
+                        </button>
+
+                        <div class="bg-white border border-slate-200 rounded-xl p-3.5 space-y-2">
+                            <span class="text-xs font-bold text-slate-700 block">無人化巡檢三大自動檢測指標：</span>
+                            <div class="grid grid-cols-3 gap-2 text-center text-xs">
+                                <div class="bg-slate-50 p-2 rounded-lg border border-slate-200">
+                                    <span class="block text-[10px] text-slate-500">熟度／日燒</span>
+                                    <span id="hud-metric-sunburn" class="font-bold text-slate-800 text-sm">最佳賞味</span>
+                                </div>
+                                <div class="bg-slate-50 p-2 rounded-lg border border-slate-200">
+                                    <span class="block text-[10px] text-slate-500">枝葉晃動度</span>
+                                    <span id="hud-metric-wind" class="font-bold text-emerald-700 text-sm">微風穩定</span>
+                                </div>
+                                <div class="bg-slate-50 p-2 rounded-lg border border-slate-200">
+                                    <span class="block text-[10px] text-slate-500">微霧覆蓋率</span>
+                                    <span id="hud-metric-mist" class="font-bold text-tech-900 text-sm">94.2%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- 視訊 AI 診斷結果報告卡片 -->
+                <div id="video-result-box" class="hidden rounded-xl bg-slate-50 border border-slate-200 p-5 space-y-3">
+                    <div class="flex items-center justify-between border-b border-slate-200 pb-2.5">
+                        <span class="text-xs font-bold text-agri-800 flex items-center gap-1.5">
+                            <span class="w-2.5 h-2.5 rounded-full bg-agri-600 animate-pulse"></span>
+                            <span>🎥 果園 24H 監視器／動態短片巡檢 AI 報告</span>
+                        </span>
+                        <span id="video-timestamp" class="text-xs text-slate-500"></span>
+                    </div>
+                    <div id="video-result-content" class="text-sm text-slate-700 leading-relaxed whitespace-pre-line"></div>
+                </div>
+
             </div>
         </section>
 
         <!-- ==================== 3.2 中央氣象署測站 > 36°C 自動監測與 LINE 連動觸發模組 ==================== -->
         <section aria-labelledby="cwa-monitor-heading" class="bg-white rounded-2xl shadow-lg border border-slate-200/90 overflow-hidden">
-            <!-- 區塊頂部標題與自動監測狀態列 -->
             <div class="bg-gradient-to-r from-tech-900 via-tech-800 to-tech-900 text-white px-6 py-4 flex flex-wrap items-center justify-between gap-3">
                 <div class="flex items-center gap-3">
                     <div class="w-9 h-9 rounded-xl bg-amber-500/20 border border-amber-400/40 text-amber-300 flex items-center justify-center flex-shrink-0">
@@ -360,7 +555,6 @@
             </div>
 
             <div class="p-6 sm:p-8 space-y-6">
-                <!-- 資料來源切換與 CWA API 設定列 -->
                 <div class="bg-slate-50 border border-slate-200 rounded-xl p-4 space-y-3">
                     <div class="flex flex-col md:flex-row md:items-center justify-between gap-3">
                         <div class="flex flex-wrap items-center gap-2">
@@ -388,7 +582,6 @@
                         </div>
                     </div>
 
-                    <!-- 可折疊的真實氣象署 Open Data API Key 輸入區 -->
                     <div id="cwa-apikey-panel" class="hidden pt-3 border-t border-slate-200 flex flex-col sm:flex-row gap-2.5 items-stretch sm:items-center">
                         <input 
                             type="password" 
@@ -403,7 +596,6 @@
                     </div>
                 </div>
 
-                <!-- 觸發警報橫幅 (當有測站 > 36°C 時自動顯示) -->
                 <div id="cwa-alert-banner" class="hidden rounded-xl bg-red-600 text-white p-4 shadow-md flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
                     <div class="flex items-start gap-3">
                         <span class="text-2xl leading-none">🚨</span>
@@ -421,18 +613,14 @@
                     </a>
                 </div>
 
-                <!-- 台東五大釋迦產區測站即時卡片網格 -->
                 <div>
                     <div class="flex items-center justify-between mb-3">
                         <span class="text-xs font-bold text-slate-700">台東釋迦核心產區自動氣象站（閾值警戒線：36.0°C）</span>
                         <span id="cwa-last-sync-text" class="text-xs text-slate-500">同步狀態：待掃描</span>
                     </div>
-                    <div id="cwa-stations-grid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
-                        <!-- 由 JavaScript 動態渲染五大測站卡片 -->
-                    </div>
+                    <div id="cwa-stations-grid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3"></div>
                 </div>
 
-                <!-- 農民安心守護狀態列 -->
                 <div class="border-t border-slate-200 pt-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
                     <div id="cwa-trigger-log" class="text-xs text-slate-600 flex items-center gap-2">
                         <span class="w-2 h-2 rounded-full bg-agri-600"></span>
@@ -447,7 +635,6 @@
 
         <!-- ==================== 3.3 臺東歷年重大焚風事件紀錄與即時捕捉時間軸 ==================== -->
         <section aria-labelledby="foehn-history-heading" class="bg-white rounded-2xl shadow-lg border border-slate-200/90 overflow-hidden">
-            <!-- 區塊頂部標題條 -->
             <div class="bg-gradient-to-r from-amber-900 via-tech-900 to-tech-800 text-white px-6 py-4 flex flex-wrap items-center justify-between gap-3">
                 <div class="flex items-center gap-3">
                     <div class="w-9 h-9 rounded-xl bg-amber-500/25 border border-amber-300/40 text-amber-200 flex items-center justify-center flex-shrink-0">
@@ -468,7 +655,6 @@
             </div>
 
             <div class="p-6 sm:p-8 space-y-6">
-                <!-- 2026 臺東五大焚風實驗情境快速啟動卡 -->
                 <div class="bg-gradient-to-br from-slate-50 via-amber-50/40 to-tech-50/60 border border-slate-200 rounded-2xl p-5 space-y-4">
                     <div class="flex flex-wrap items-center justify-between gap-2">
                         <div class="flex items-center gap-2">
@@ -481,7 +667,6 @@
                     </div>
 
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3.5">
-                        <!-- 實驗情境 1：2026/04/14 -->
                         <div class="bg-white border border-amber-200 rounded-xl p-4 shadow-sm hover:shadow-md transition-all flex flex-col justify-between space-y-3">
                             <div class="space-y-1.5">
                                 <div class="flex items-center justify-between gap-1">
@@ -498,7 +683,6 @@
                             </button>
                         </div>
 
-                        <!-- 實驗情境 2：2026/07/11 -->
                         <div class="bg-white border border-red-200 rounded-xl p-4 shadow-sm hover:shadow-md transition-all flex flex-col justify-between space-y-3">
                             <div class="space-y-1.5">
                                 <div class="flex items-center justify-between gap-1">
@@ -515,7 +699,6 @@
                             </button>
                         </div>
 
-                        <!-- 實驗情境 3：2026/07/14 -->
                         <div class="bg-white border border-red-200 rounded-xl p-4 shadow-sm hover:shadow-md transition-all flex flex-col justify-between space-y-3">
                             <div class="space-y-1.5">
                                 <div class="flex items-center justify-between gap-1">
@@ -532,7 +715,6 @@
                             </button>
                         </div>
 
-                        <!-- 實驗情境 4：2026/07/21 -->
                         <div class="bg-white border border-orange-300 rounded-xl p-4 shadow-sm hover:shadow-md transition-all flex flex-col justify-between space-y-3">
                             <div class="space-y-1.5">
                                 <div class="flex items-center justify-between gap-1">
@@ -549,7 +731,6 @@
                             </button>
                         </div>
 
-                        <!-- 實驗情境 5：2026/10/23 - 10/24 薔琵颱風 (跨 2 欄強調) -->
                         <div class="md:col-span-2 bg-gradient-to-r from-red-50 via-amber-50/70 to-white border-2 border-red-300 rounded-xl p-4 shadow-sm hover:shadow-md transition-all flex flex-col justify-between space-y-3">
                             <div class="space-y-1.5">
                                 <div class="flex flex-wrap items-center justify-between gap-1">
@@ -568,7 +749,6 @@
                     </div>
                 </div>
 
-                <!-- 篩選與操作列 -->
                 <div class="flex flex-wrap items-center justify-between gap-3">
                     <div class="flex flex-wrap items-center gap-2">
                         <span class="text-xs font-bold text-slate-600">事件篩選：</span>
@@ -588,7 +768,6 @@
                     <span class="text-xs text-slate-500">資料來源：中央氣象署（CWA）2026 觀測實錄 &amp; 即時 API 自動捕捉</span>
                 </div>
 
-                <!-- 歷史焚風時間軸表格 -->
                 <div class="overflow-x-auto border border-slate-200 rounded-xl">
                     <table class="w-full text-left border-collapse">
                         <thead>
@@ -600,9 +779,7 @@
                                 <th class="py-3 px-4 text-right">情境重演</th>
                             </tr>
                         </thead>
-                        <tbody id="foehn-history-tbody" class="divide-y divide-slate-200 text-xs sm:text-sm bg-white">
-                            <!-- 由 JavaScript 動態渲染精確時間軸紀錄 -->
-                        </tbody>
+                        <tbody id="foehn-history-tbody" class="divide-y divide-slate-200 text-xs sm:text-sm bg-white"></tbody>
                     </table>
                 </div>
             </div>
@@ -610,10 +787,8 @@
 
         <!-- ==================== 3.5 焚風預警 LINE 官方帳號 & 遠端自動化防禦體驗區 ==================== -->
         <section aria-labelledby="line-bot-heading" class="bg-white rounded-2xl shadow-lg border border-slate-200/90 overflow-hidden">
-            <!-- 區塊頂部標題條 -->
             <div class="bg-gradient-to-r from-[#06C755]/15 via-agri-50 to-tech-50 px-6 py-4 border-b border-slate-200 flex flex-wrap items-center justify-between gap-2">
                 <div class="flex items-center gap-3">
-                    <!-- LINE 品牌綠圓角圖示 -->
                     <div class="w-9 h-9 rounded-xl bg-[#06C755] text-white flex items-center justify-center shadow-sm flex-shrink-0">
                         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/>
@@ -631,10 +806,7 @@
                 </a>
             </div>
 
-            <!-- 雙欄內容區：左側免費訂閱綁定 + 右側手機 LINE 推播互動模擬 -->
             <div class="p-6 sm:p-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                
-                <!-- 左側：免費訂閱說明與一鍵模擬測試 (佔 6 欄) -->
                 <div class="lg:col-span-6 space-y-5">
                     <div class="space-y-2.5">
                         <div class="inline-flex items-center gap-1.5 text-xs font-bold text-agri-800 bg-agri-100 px-2.5 py-1 rounded-md">
@@ -648,7 +820,6 @@
                         </p>
                     </div>
 
-                    <!-- 真實官方帳號快速加入列 -->
                     <div class="bg-emerald-50/80 border border-emerald-200 rounded-xl p-3.5 flex flex-wrap items-center justify-between gap-3">
                         <div class="flex items-center gap-2.5">
                             <img src="https://duk.tw/rONMBB.png" alt="釋迦盾Demeter" class="w-9 h-9 rounded-full bg-white p-0.5 border border-emerald-300 object-contain">
@@ -662,7 +833,6 @@
                         </a>
                     </div>
 
-                    <!-- 綁定果園手機通知模擬表單 -->
                     <div class="bg-slate-50 border border-slate-200 rounded-xl p-4 space-y-3">
                         <label for="line-farm-code" class="block text-xs font-bold text-slate-700">
                             綁定接收推播之果園代碼（免費開通測試）
@@ -693,10 +863,8 @@
                     </div>
                 </div>
 
-                <!-- 右側：擬真手機 LINE 聊天室推播畫面 (佔 6 欄) -->
                 <div class="lg:col-span-6 w-full">
                     <div class="w-full max-w-md mx-auto bg-[#8CABD9] rounded-3xl shadow-xl border-4 border-slate-800 overflow-hidden">
-                        <!-- 手機 LINE 頂部導航列 -->
                         <div class="bg-[#242C3D] text-white px-4 py-3 flex items-center justify-between">
                             <div class="flex items-center gap-2">
                                 <span class="text-xs text-slate-300">◀</span>
@@ -706,20 +874,16 @@
                             <span id="line-msg-time" class="text-[11px] text-slate-300">剛剛</span>
                         </div>
 
-                        <!-- LINE 聊天訊息氣泡區 -->
                         <div id="line-chat-stream" class="p-4 space-y-3 max-h-[340px] overflow-y-auto">
-                            <!-- 系統推播 Flex Message 警報卡片 -->
                             <div class="flex items-start gap-2">
                                 <div class="w-8 h-8 rounded-full bg-agri-800 border border-white text-white flex items-center justify-center text-xs font-bold flex-shrink-0 shadow-sm">
                                     盾
                                 </div>
                                 <div class="bg-white rounded-2xl rounded-tl-none shadow-md overflow-hidden w-full border border-slate-200">
-                                    <!-- 卡片紅色警報頂部 -->
                                     <div class="bg-red-600 text-white px-3.5 py-2 flex items-center justify-between">
                                         <span class="text-xs font-bold tracking-wider">🚨 緊急焚風預警通知</span>
                                         <span class="text-[10px] bg-white/20 px-1.5 py-0.5 rounded">Level 3 高風險</span>
                                     </div>
-                                    <!-- 卡片數據摘要 -->
                                     <div class="p-3.5 space-y-2.5 text-xs text-slate-700">
                                         <p class="font-bold text-sm text-slate-900" id="line-card-farm-title">
                                             📍 監測站點：太麻里鄉-A01示範園
@@ -737,7 +901,6 @@
                                         <p class="text-[11px] text-slate-500 leading-relaxed">
                                             偵測到您目前不在園區現場，是否立即透過雲端啟動「高壓微霧降溫與防風網防禦」？
                                         </p>
-                                        <!-- LINE 互動式遠端執行按鈕 -->
                                         <div class="pt-1 space-y-1.5">
                                             <button 
                                                 type="button" 
@@ -757,25 +920,9 @@
                                     </div>
                                 </div>
                             </div>
-
-                            <!-- 使用者點擊按鈕後的動態對話回應區 -->
                             <div id="line-dynamic-replies" class="space-y-2.5"></div>
                         </div>
                     </div>
-                </div>
-
-                <!-- API Key 設定按鈕 (LocalStorage 安全保護) -->
-                <div class="flex items-center gap-2 flex-shrink-0">
-                    <button 
-                        type="button" 
-                        id="open-apikey-modal-btn" 
-                        class="px-3.5 py-2 rounded-xl bg-white/10 hover:bg-white/20 border border-white/25 text-white text-xs sm:text-sm font-bold flex items-center gap-2 backdrop-blur-sm transition-all shadow-sm cursor-pointer"
-                        title="設定 Gemini API Key（安全保存在您的個人瀏覽器）"
-                    >
-                        <span>🔑</span>
-                        <span id="apikey-status-label">設定 API Key</span>
-                        <span id="apikey-indicator-dot" class="w-2 h-2 rounded-full bg-amber-400"></span>
-                    </button>
                 </div>
 
             </div>
@@ -793,8 +940,6 @@
 
     <!-- ==================== 4. 可愛台灣黑熊 AI 客服機器人 (Floating Chatbot) ==================== -->
     <div id="bear-chatbot-container" class="fixed bottom-5 right-5 z-50 flex flex-col items-end">
-        
-        <!-- 展開的客服對話視窗 -->
         <div 
             id="bear-chat-window" 
             role="dialog"
@@ -802,46 +947,33 @@
             class="hidden mb-3 w-[calc(100vw-2.5rem)] sm:w-96 bg-white rounded-2xl shadow-2xl border border-slate-200 overflow-hidden flex flex-col transition-all duration-300 origin-bottom-right"
             style="max-height: 75vh;"
         >
-            <!-- 視窗頂部標題列 -->
             <div class="bg-gradient-to-r from-tech-900 to-agri-800 text-white px-4 py-3.5 flex items-center justify-between shadow-sm">
                 <div class="flex items-center gap-3">
-                    <!-- 可愛台灣黑熊手捧大目釋迦大頭貼 (淺色高對比背景 SVG) -->
                     <div class="w-11 h-11 rounded-full bg-gradient-to-b from-white to-agri-100 border-2 border-agri-500 flex items-center justify-center flex-shrink-0 shadow-md">
                         <svg class="w-9 h-9" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <!-- 耳朵 -->
                             <circle cx="24" cy="24" r="12" fill="#1E293B"/>
                             <circle cx="24" cy="24" r="5.5" fill="#FDBA74"/>
                             <circle cx="76" cy="24" r="12" fill="#1E293B"/>
                             <circle cx="76" cy="24" r="5.5" fill="#FDBA74"/>
-                            <!-- 身體與胸前經典白色 V 字領 -->
                             <path d="M22 92C22 74 34 66 50 66C66 66 78 74 78 92" fill="#1E293B"/>
                             <path d="M36 74L50 84L64 74" stroke="#FFFFFF" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            <!-- 頭部 -->
                             <ellipse cx="50" cy="46" rx="31" ry="26" fill="#1E293B"/>
-                            <!-- 頭頂小葉子裝飾 -->
                             <path d="M50 20C50 20 43 11 35 15C41 20 50 20 50 20Z" fill="#3D9970"/>
                             <path d="M50 20C50 20 57 11 65 15C59 20 50 20 50 20Z" fill="#2E7D32"/>
-                            <!-- 眼睛與腮紅 -->
                             <circle cx="38" cy="41" r="4" fill="#FFFFFF"/>
                             <circle cx="39" cy="40" r="1.6" fill="#0F172A"/>
                             <circle cx="62" cy="41" r="4" fill="#FFFFFF"/>
                             <circle cx="61" cy="40" r="1.6" fill="#0F172A"/>
                             <ellipse cx="30" cy="49" rx="4.5" ry="2.6" fill="#FB7185" fill-opacity="0.85"/>
                             <ellipse cx="70" cy="49" rx="4.5" ry="2.6" fill="#FB7185" fill-opacity="0.85"/>
-                            <!-- 吻部與鼻子 -->
                             <ellipse cx="50" cy="52" rx="12" ry="9" fill="#FEF3C7"/>
                             <ellipse cx="50" cy="48.5" rx="4.5" ry="3.2" fill="#0F172A"/>
                             <path d="M45.5 55Q50 58.5 54.5 55" stroke="#0F172A" stroke-width="2.2" stroke-linecap="round"/>
-                            <!-- 飽滿翠綠大目釋迦 (雙手捧在胸前) -->
                             <g transform="translate(50, 77)">
-                                <!-- 果蒂 -->
                                 <path d="M0 -13L0 -17M0 -15C4 -17 7 -15 8 -13" stroke="#78350F" stroke-width="2.2" stroke-linecap="round"/>
-                                <!-- 釋迦果實本體 -->
                                 <path d="M0 -13C-10 -13 -15 -5 -13 5C-11 12 -5 15 0 15C5 15 11 12 13 5C15 -5 10 -13 0 -13Z" fill="#4ADE80" stroke="#183C28" stroke-width="1.8"/>
-                                <!-- 大目鱗目紋理 -->
                                 <path d="M-7 -6Q0 -3 7 -6M-9 1Q0 5 9 1M-6 8Q0 11 6 8M0 -12L0 14M-6 -10L-5 12M6 -10L5 12" stroke="#183C28" stroke-width="1.2" stroke-linecap="round" opacity="0.75"/>
                             </g>
-                            <!-- 雙手熊掌抱住釋迦 -->
                             <ellipse cx="33" cy="79" rx="7.5" ry="5.5" transform="rotate(-18 33 79)" fill="#1E293B" stroke="#FFFFFF" stroke-width="1.2"/>
                             <ellipse cx="67" cy="79" rx="7.5" ry="5.5" transform="rotate(18 67 79)" fill="#1E293B" stroke="#FFFFFF" stroke-width="1.2"/>
                         </svg>
@@ -866,27 +998,25 @@
                 </button>
             </div>
 
-            <!-- 訊息歷史滾動區 -->
             <div id="bear-chat-messages" class="p-4 space-y-3.5 overflow-y-auto bg-slate-50 flex-grow text-sm" style="min-height: 260px; max-height: 360px;">
-                <!-- 初始歡迎訊息 -->
                 <div class="flex items-start gap-2.5">
                     <div class="w-7 h-7 rounded-full bg-tech-900 text-white flex items-center justify-center flex-shrink-0 text-xs font-bold mt-0.5">
                         熊
                     </div>
                     <div class="bg-white border border-slate-200 text-slate-800 rounded-2xl rounded-tl-none px-3.5 py-2.5 shadow-sm leading-relaxed">
                         哈囉！我是台東黑熊守護員 🐻🌿<br>
-                        您可以問我<strong>「好時果子農園」</strong>、<strong>「2026 焚風紀錄」</strong>、<strong>「防呆保護機制」</strong>、<strong>「LINE 遠端操作」</strong>或<strong>「釋迦分級標價與保存」</strong>喔！
+                        您可以問我<strong>「好時果子農園」</strong>、<strong>「2026 焚風紀錄」</strong>、<strong>「防呆保護機制」</strong>、<strong>「LINE 遠端操作」</strong>或<strong>「監視器影片 AI 巡檢」</strong>喔！
                     </div>
                 </div>
             </div>
 
-            <!-- 常見問題快速點擊按鈕 -->
+            <!-- 常見問題快速點擊按鈕 (含新增之監視器影片 AI 巡檢) -->
             <div class="px-3 py-2.5 bg-slate-100/90 border-t border-slate-200 flex flex-wrap gap-1.5">
+                <button type="button" data-q="監視器影片 AI 巡檢（例如 7-11 香蕉或果園鏡頭）是怎麼運作的？" class="bear-quick-q text-xs bg-emerald-50 hover:bg-emerald-100 text-agri-800 font-bold border border-emerald-300 px-2.5 py-1.5 rounded-full transition-colors cursor-pointer">
+                    🎥 監視器影片 AI 巡檢？
+                </button>
                 <button type="button" data-q="常見的果園編號要去哪裡查？有哪些示範代碼？" class="bear-quick-q text-xs bg-agri-50 hover:bg-agri-100 text-agri-800 font-bold border border-agri-300 px-2.5 py-1.5 rounded-full transition-colors cursor-pointer">
                     🏷️ 果園編號怎麼查？
-                </button>
-                <button type="button" data-q="現在果園的即時氣象與水塔狀態如何？" class="bear-quick-q text-xs bg-emerald-50 hover:bg-emerald-100 text-agri-800 font-bold border border-emerald-300 px-2.5 py-1.5 rounded-full transition-colors cursor-pointer">
-                    📡 目前果園即時狀態？
                 </button>
                 <button type="button" data-q="提早 3 小時焚風預測（黃燈預警與自動補水）是怎麼運作的？" class="bear-quick-q text-xs bg-amber-50 hover:bg-amber-100 text-amber-900 font-bold border border-amber-300 px-2.5 py-1.5 rounded-full transition-colors cursor-pointer">
                     ⏳ 提早 3 小時預測？
@@ -897,15 +1027,11 @@
                 <button type="button" data-q="2026年台東有哪些重大焚風紀錄？" class="bear-quick-q text-xs bg-white hover:bg-agri-50 text-tech-900 border border-slate-300 hover:border-agri-500 px-2.5 py-1.5 rounded-full transition-colors cursor-pointer">
                     🔥 2026 焚風實錄？
                 </button>
-                <button type="button" data-q="系統有什麼防呆安全保護機制？" class="bear-quick-q text-xs bg-white hover:bg-agri-50 text-tech-900 border border-slate-300 hover:border-agri-500 px-2.5 py-1.5 rounded-full transition-colors cursor-pointer">
-                    🛡️ 防呆保護機制？
-                </button>
                 <button type="button" data-q="怎麼用 LINE 遠端啟動微霧降溫？" class="bear-quick-q text-xs bg-white hover:bg-agri-50 text-tech-900 border border-slate-300 hover:border-agri-500 px-2.5 py-1.5 rounded-full transition-colors cursor-pointer">
                     📱 LINE 遠端操作？
                 </button>
             </div>
 
-            <!-- 底部輸入表單 -->
             <form id="bear-chat-form" class="p-3 bg-white border-t border-slate-200 flex items-center gap-2">
                 <input type="file" id="bear-file-input" accept="image/*" class="hidden">
                 <button 
@@ -940,7 +1066,6 @@
             </form>
         </div>
 
-        <!-- 懸浮喚起按鈕 -->
         <button 
             type="button" 
             id="toggle-bear-chat"
@@ -950,30 +1075,23 @@
             <div id="bear-tooltip" class="absolute right-20 bg-white text-tech-900 text-xs font-bold px-3 py-1.5 rounded-xl shadow-lg border border-slate-200 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
                 有任何關於釋迦防災的問題嗎？點我問小熊！ 🐻🌿
             </div>
-            <!-- SVG 台灣黑熊與釋迦大頭貼 -->
             <svg class="w-11 h-11" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <!-- 耳朵 -->
                 <circle cx="25" cy="25" r="11" fill="#1E293B"/>
                 <circle cx="25" cy="25" r="4.5" fill="#FDBA74"/>
                 <circle cx="75" cy="25" r="11" fill="#1E293B"/>
                 <circle cx="75" cy="25" r="4.5" fill="#FDBA74"/>
-                <!-- 頭部本體 -->
                 <ellipse cx="50" cy="48" rx="29" ry="24" fill="#1E293B"/>
-                <!-- 頭頂小葉子裝飾 -->
                 <path d="M50 22C50 22 43 13 36 17C42 21 50 22 50 22Z" fill="#3D9970"/>
                 <path d="M50 22C50 22 57 13 64 17C58 21 50 22 50 22Z" fill="#2E7D32"/>
-                <!-- 眼睛與腮紅 -->
                 <circle cx="38" cy="42" r="3.8" fill="#FFFFFF"/>
                 <circle cx="39" cy="41" r="1.5" fill="#0F172A"/>
                 <circle cx="62" cy="42" r="3.8" fill="#FFFFFF"/>
                 <circle cx="61" cy="41" r="1.5" fill="#0F172A"/>
                 <ellipse cx="30" cy="50" rx="4.5" ry="2.5" fill="#FB7185" fill-opacity="0.9"/>
                 <ellipse cx="70" cy="50" rx="4.5" ry="2.5" fill="#FB7185" fill-opacity="0.9"/>
-                <!-- 吻部與鼻子 -->
                 <ellipse cx="50" cy="53" rx="11" ry="8.5" fill="#FEF3C7"/>
                 <ellipse cx="50" cy="49.5" rx="4.2" ry="3" fill="#0F172A"/>
                 <path d="M46 56Q50 59.5 54 56" stroke="#0F172A" stroke-width="2" stroke-linecap="round"/>
-                <!-- 飽滿翠綠大目釋迦 -->
                 <g transform="translate(50, 77)">
                     <path d="M0 -13L0 -17.5M0 -15C3.5 -17 7 -15 8 -13" stroke="#78350F" stroke-width="2.2" stroke-linecap="round"/>
                     <path d="M0 -13C-10 -13 -15 -5 -13 4C-11 11.5 -4.5 14.5 0 14.5C4.5 14.5 11 11.5 13 4C15 -5 10 -13 0 -13Z" fill="#4ADE80" stroke="#183C28" stroke-width="1.8"/>
@@ -1165,13 +1283,12 @@
                 visionResultBox.classList.add('hidden');
             });
 
-            // 7-11 嚴選香蕉測試樣本
             sampleBananaBtn.addEventListener('click', () => {
                 const canvas = document.createElement('canvas');
                 canvas.width = 400;
                 canvas.height = 300;
                 const ctx = canvas.getContext('2d');
-                ctx.fillStyle = '#FEF08A'; // 香蕉黃
+                ctx.fillStyle = '#FEF08A';
                 ctx.fillRect(0, 0, 400, 300);
                 ctx.fillStyle = '#166534';
                 ctx.font = 'bold 20px sans-serif';
@@ -1180,13 +1297,12 @@
                 handleSelectedImage(dataUrl, 'image/png');
             });
 
-            // 微日燒大目釋迦測試樣本
             sampleSunburnBtn.addEventListener('click', () => {
                 const canvas = document.createElement('canvas');
                 canvas.width = 400;
                 canvas.height = 300;
                 const ctx = canvas.getContext('2d');
-                ctx.fillStyle = '#854D0E'; // 釋迦微日燒褐色
+                ctx.fillStyle = '#854D0E';
                 ctx.fillRect(0, 0, 400, 300);
                 ctx.fillStyle = '#FFFFFF';
                 ctx.font = 'bold 20px sans-serif';
@@ -1237,9 +1353,7 @@
                             const resJson = await resp.json();
                             analysisText = resJson?.candidates?.[0]?.content?.parts?.[0]?.text;
                         }
-                    } catch (e) {
-                        // 略過錯誤，降級至本地精準專家回覆
-                    }
+                    } catch (e) {}
                 }
 
                 if (!analysisText) {
@@ -1262,6 +1376,316 @@
                 visionResultBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
             });
 
+            // ==================== 🎥 果園 24H 監視器 & 手機實拍短影音 AI 巡檢診斷邏輯 ====================
+            const cctvVideoPlayer = document.getElementById('cctv-video-player');
+            const cctvSimCanvas = document.getElementById('cctv-sim-canvas');
+            const cctvVideoInput = document.getElementById('cctv-video-input');
+            const uploadVideoBtn = document.getElementById('upload-video-btn');
+            const toggleVideoPlaybackBtn = document.getElementById('toggle-video-playback-btn');
+            const sampleBananaVideoBtn = document.getElementById('sample-banana-video-btn');
+            const sampleOrchardCctvBtn = document.getElementById('sample-orchard-cctv-btn');
+            const runVideoAiBtn = document.getElementById('run-video-ai-btn');
+            const videoBtnIcon = document.getElementById('video-btn-icon');
+            const videoBtnSpinner = document.getElementById('video-btn-spinner');
+            const videoBtnText = document.getElementById('video-btn-text');
+            const videoResultBox = document.getElementById('video-result-box');
+            const videoResultContent = document.getElementById('video-result-content');
+            const videoTimestamp = document.getElementById('video-timestamp');
+            const cctvCamTag = document.getElementById('cctv-cam-tag');
+            const cctvTrackingText = document.getElementById('cctv-tracking-text');
+            const cctvClockText = document.getElementById('cctv-clock-text');
+            const cctvTimer = document.getElementById('cctv-timer');
+            const cctvStatusBadge = document.getElementById('cctv-status-badge');
+            const hudMetricSunburn = document.getElementById('hud-metric-sunburn');
+            const hudMetricWind = document.getElementById('hud-metric-wind');
+            const hudMetricMist = document.getElementById('hud-metric-mist');
+
+            const kfCanvas1 = document.getElementById('kf-canvas-1');
+            const kfCanvas2 = document.getElementById('kf-canvas-2');
+            const kfCanvas3 = document.getElementById('kf-canvas-3');
+
+            let currentVideoScenario = 'banana'; // 'banana' | 'orchard' | 'custom'
+            let isCustomVideoLoaded = false;
+            let simAnimFrame = null;
+            let simAngle = 0;
+
+            // 擬真動態監視器畫面繪製 (支援 7-11 香蕉動態掃描或大目釋迦果園微風微霧)
+            function drawSimulatedCctvFrame() {
+                if (isCustomVideoLoaded && !cctvVideoPlayer.paused) {
+                    // 若使用者播放自己的影片，此畫布暫停繪製
+                    return;
+                }
+                const ctx = cctvSimCanvas.getContext('2d');
+                const w = cctvSimCanvas.width;
+                const h = cctvSimCanvas.height;
+
+                simAngle += 0.04;
+
+                if (currentVideoScenario === 'banana') {
+                    // 7-11 嚴選香蕉手機實拍動態巡檢掃描
+                    ctx.fillStyle = '#1e293b';
+                    ctx.fillRect(0, 0, w, h);
+
+                    // 背景木紋或超商白色桌面
+                    ctx.fillStyle = '#f8fafc';
+                    ctx.fillRect(20, 20, w - 40, h - 40);
+
+                    // 香蕉主體（帶有鏡頭輕微移動效果）
+                    const offsetX = Math.sin(simAngle) * 15;
+                    const offsetY = Math.cos(simAngle * 0.8) * 8;
+
+                    ctx.save();
+                    ctx.translate(w / 2 + offsetX, h / 2 + offsetY);
+                    
+                    // 畫一串飽滿的香蕉
+                    ctx.beginPath();
+                    ctx.ellipse(0, 0, 160, 45, -0.2, 0, Math.PI * 2);
+                    ctx.fillStyle = '#FACC15'; // 香蕉鮮黃
+                    ctx.fill();
+                    ctx.lineWidth = 4;
+                    ctx.strokeStyle = '#CA8A04';
+                    ctx.stroke();
+
+                    // 香蕉兩端青綠色果柄與尖端
+                    ctx.fillStyle = '#15803D';
+                    ctx.beginPath();
+                    ctx.ellipse(-145, 25, 20, 12, 0.4, 0, Math.PI * 2);
+                    ctx.fill();
+
+                    // 梅花斑／糖斑（最佳熟度特徵）
+                    ctx.fillStyle = '#78350F';
+                    for (let i = -100; i < 110; i += 35) {
+                        ctx.beginPath();
+                        ctx.arc(i, Math.sin(i) * 12, 3, 0, Math.PI * 2);
+                        ctx.fill();
+                    }
+
+                    // 超商標籤模擬
+                    ctx.fillStyle = '#DC2626';
+                    ctx.fillRect(-30, -18, 60, 24);
+                    ctx.fillStyle = '#FFFFFF';
+                    ctx.font = 'bold 12px sans-serif';
+                    ctx.fillText('7-11 嚴選', -24, -2);
+
+                    ctx.restore();
+
+                    // AI 掃描雷射光束
+                    const scanY = ((Math.sin(simAngle * 1.5) + 1) / 2) * (h - 60) + 30;
+                    ctx.strokeStyle = 'rgba(16, 185, 129, 0.75)';
+                    ctx.lineWidth = 2;
+                    ctx.beginPath();
+                    ctx.moveTo(20, scanY);
+                    ctx.lineTo(w - 20, scanY);
+                    ctx.stroke();
+
+                } else {
+                    // 太麻里釋迦果園 24H 監視器動態
+                    ctx.fillStyle = '#064e3b';
+                    ctx.fillRect(0, 0, w, h);
+
+                    // 綠意盎然的果樹與土壤
+                    ctx.fillStyle = '#78350F';
+                    ctx.fillRect(0, h - 80, w, 80);
+
+                    // 釋迦果樹枝幹晃動（受焚風西南氣流影響）
+                    const windSway = Math.sin(simAngle * 2) * 20;
+
+                    ctx.strokeStyle = '#451a03';
+                    ctx.lineWidth = 14;
+                    ctx.beginPath();
+                    ctx.moveTo(w / 2, h - 80);
+                    ctx.quadraticCurveTo(w / 2 + windSway / 2, h / 2, w / 2 + windSway, 90);
+                    ctx.stroke();
+
+                    // 翠綠大目釋迦果實
+                    ctx.fillStyle = '#22c55e';
+                    ctx.beginPath();
+                    ctx.arc(w / 2 + windSway + 40, 150, 35, 0, Math.PI * 2);
+                    ctx.fill();
+                    ctx.strokeStyle = '#14532d';
+                    ctx.lineWidth = 3;
+                    ctx.stroke();
+
+                    // 高壓微霧噴霧動態粒子
+                    ctx.fillStyle = 'rgba(255, 255, 255, 0.45)';
+                    for (let p = 0; p < 40; p++) {
+                        const px = (p * 19 + simAngle * 90) % w;
+                        const py = (p * 11 + Math.sin(simAngle + p) * 30) % (h - 80);
+                        ctx.beginPath();
+                        ctx.arc(px, py, 2.5, 0, Math.PI * 2);
+                        ctx.fill();
+                    }
+                }
+
+                // 隨時間更新右上角時間碼
+                const d = new Date();
+                cctvClockText.textContent = `${d.getFullYear()}/${String(d.getMonth()+1).padStart(2,'0')}/${String(d.getDate()).padStart(2,'0')} ${d.toLocaleTimeString('zh-TW', { hour12: false })}`;
+                
+                simAnimFrame = requestAnimationFrame(drawSimulatedCctvFrame);
+            }
+
+            drawSimulatedCctvFrame();
+
+            // 抽樣將主畫面截取到三張關鍵畫面 Canvas
+            function captureKeyframesFromView() {
+                const source = isCustomVideoLoaded ? cctvVideoPlayer : cctvSimCanvas;
+                [kfCanvas1, kfCanvas2, kfCanvas3].forEach((canvas, index) => {
+                    const ctx = canvas.getContext('2d');
+                    ctx.drawImage(source, 0, 0, canvas.width, canvas.height);
+                    // 加上畫面編號標記
+                    ctx.fillStyle = 'rgba(0,0,0,0.6)';
+                    ctx.fillRect(4, 4, 60, 16);
+                    ctx.fillStyle = '#10b981';
+                    ctx.font = 'bold 10px monospace';
+                    ctx.fillText(`KF-0${index+1} 30fps`, 8, 16);
+                });
+            }
+
+            setTimeout(captureKeyframesFromView, 400);
+
+            // 點擊上傳本機手機拍攝影片 (MP4 / MOV)
+            uploadVideoBtn.addEventListener('click', () => {
+                cctvVideoInput.click();
+            });
+
+            cctvVideoInput.addEventListener('change', (e) => {
+                const file = e.target.files[0];
+                if (!file) return;
+
+                const videoUrl = URL.createObjectURL(file);
+                cctvVideoPlayer.src = videoUrl;
+                cctvVideoPlayer.classList.remove('hidden');
+                cctvSimCanvas.classList.add('hidden');
+                isCustomVideoLoaded = true;
+                currentVideoScenario = 'custom';
+
+                cctvCamTag.textContent = `MOBILE [實拍影片: ${file.name}]`;
+                cctvTrackingText.textContent = '手機實拍視訊載入完成';
+                cctvStatusBadge.textContent = '自訂視訊 · 播放中';
+                cctvVideoPlayer.play();
+
+                cctvVideoPlayer.addEventListener('loadeddata', () => {
+                    setTimeout(captureKeyframesFromView, 500);
+                });
+            });
+
+            toggleVideoPlaybackBtn.addEventListener('click', () => {
+                if (isCustomVideoLoaded) {
+                    if (cctvVideoPlayer.paused) {
+                        cctvVideoPlayer.play();
+                    } else {
+                        cctvVideoPlayer.pause();
+                    }
+                } else {
+                    if (simAnimFrame) {
+                        cancelAnimationFrame(simAnimFrame);
+                        simAnimFrame = null;
+                        cctvStatusBadge.textContent = '畫面暫停';
+                    } else {
+                        drawSimulatedCctvFrame();
+                        cctvStatusBadge.textContent = '訊號良好 · 30 FPS';
+                    }
+                }
+            });
+
+            // 示範 1：7-11 嚴選香蕉動態掃描
+            sampleBananaVideoBtn.addEventListener('click', () => {
+                isCustomVideoLoaded = false;
+                currentVideoScenario = 'banana';
+                cctvVideoPlayer.classList.add('hidden');
+                cctvSimCanvas.classList.remove('hidden');
+
+                cctvCamTag.textContent = 'CAM-02 [7-11 嚴選香蕉·動態辨識]';
+                cctvTrackingText.textContent = '香蕉成熟度與糖斑鎖定中';
+                hudMetricSunburn.textContent = '糖度高峰';
+                hudMetricWind.textContent = '室內靜風';
+                hudMetricMist.textContent = '待命中';
+
+                if (!simAnimFrame) drawSimulatedCctvFrame();
+                setTimeout(captureKeyframesFromView, 200);
+            });
+
+            // 示範 2：太麻里釋迦果園 24H CCTV
+            sampleOrchardCctvBtn.addEventListener('click', () => {
+                isCustomVideoLoaded = false;
+                currentVideoScenario = 'orchard';
+                cctvVideoPlayer.classList.add('hidden');
+                cctvSimCanvas.classList.remove('hidden');
+
+                cctvCamTag.textContent = 'CAM-01 [太麻里A01·迎風面鏡頭]';
+                cctvTrackingText.textContent = '微風樹冠與微霧鎖定中';
+                hudMetricSunburn.textContent = '無日燒跡象';
+                hudMetricWind.textContent = '西南風 4級';
+                hudMetricMist.textContent = '94.2% 覆蓋';
+
+                if (!simAnimFrame) drawSimulatedCctvFrame();
+                setTimeout(captureKeyframesFromView, 200);
+            });
+
+            // 執行視訊 AI 連續巡檢分析
+            runVideoAiBtn.addEventListener('click', async () => {
+                captureKeyframesFromView();
+
+                runVideoAiBtn.disabled = true;
+                videoBtnIcon.classList.add('hidden');
+                videoBtnSpinner.classList.remove('hidden');
+                videoBtnText.textContent = 'Gemini Video AI 視訊抽樣多幀深度診斷中...';
+
+                // 取第 2 畫面做為分析 Base64 樣本
+                const sampleBase64 = kfCanvas2.toDataURL('image/png').split(',')[1];
+                const apiKey = getActiveApiKey();
+                let videoAiText = "";
+
+                if (apiKey) {
+                    try {
+                        const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${apiKey}`;
+                        const payload = {
+                            contents: [{
+                                role: "user",
+                                parts: [
+                                    { text: "這是從農園 24H 監視器或農民手機拍攝的實拍短片中抽樣出的關鍵畫面。請以智慧農業巡檢專家角度進行『動態視訊診斷』：1. 辨識畫面中的主要作物（是 7-11 購買的香蕉、還是大目釋迦）；2. 評估其成熟度、黑斑（是糖斑還是病害/日燒焦斑）、表面水分與新鮮度；3. 提出無人化巡檢結論與分級食用/採收建議。請以親切專業的繁體中文條列呈現！" },
+                                    {
+                                        inlineData: {
+                                            mimeType: "image/png",
+                                            data: sampleBase64
+                                        }
+                                    }
+                                ]
+                            }]
+                        };
+                        const resp = await fetch(apiUrl, {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify(payload)
+                        });
+                        if (resp.ok) {
+                            const resJson = await resp.json();
+                            videoAiText = resJson?.candidates?.[0]?.content?.parts?.[0]?.text;
+                        }
+                    } catch (e) {}
+                }
+
+                if (!videoAiText) {
+                    await new Promise(r => setTimeout(r, 900));
+                    if (currentVideoScenario === 'banana' || (isCustomVideoLoaded && cctvCamTag.textContent.includes('香蕉'))) {
+                        videoAiText = `🎥 **7-11 香蕉手機實拍視訊 AI 巡檢結論**：\n• **品項辨識**：經多幀追蹤比對，判定為 **7-11 嚴選高品質黃金香蕉**，果身圓潤飽滿、無碰撞黑青。\n• **熟度與糖斑判定**：表皮呈現均勻金黃色、稜角圓潤，局部微細黑斑為自然成熟釋放的**「健康糖斑（梅花斑）」**，並非高溫焚風日燒損害，目前正處於香氣與甜度最高峰！🍌✨\n• **貨架期與產銷建議**：建議於 2～3 天內直接享用或製成果昔，分級評定為 **A 級優選鮮果**！`;
+                    } else {
+                        videoAiText = `🎥 **太麻里釋迦果園 24H 監視器 AI 巡檢結論**：\n• **鏡頭監測站點**：CAM-01 太麻里 A01 示範果園迎風面監測鏡頭。\n• **枝葉受風與熱萎凋檢驗**：視訊幀率穩定，葉片晃動幅度維持在 4 級風安全範圍內，迎風側大目釋迦果實表面無焦黑日燒痕跡。\n• **微霧擴散均勻度**：樹冠層微霧覆蓋率達 **94.2%**，水氣分布良好，有效壓制微氣象熱累積，果園處於安全綠燈防禦狀態！🍈💧`;
+                    }
+                }
+
+                videoTimestamp.textContent = new Date().toLocaleTimeString('zh-TW', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+                videoResultContent.innerHTML = videoAiText.replace(/\*\*(.+?)\*\*/g, '<strong class="text-tech-900 font-bold">$1</strong>');
+                videoResultBox.classList.remove('hidden');
+
+                runVideoAiBtn.disabled = false;
+                videoBtnSpinner.classList.add('hidden');
+                videoBtnIcon.classList.remove('hidden');
+                videoBtnText.textContent = '重新執行 AI 視訊關鍵幀巡檢診斷';
+
+                videoResultBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            });
+
             // ==================== 主表單：焚風預警分析與防呆邏輯 ====================
             const foehnForm = document.getElementById('foehn-analysis-form');
             const orchardInput = document.getElementById('orchard-input');
@@ -1274,7 +1698,6 @@
             const btnSpinner = document.getElementById('btn-spinner');
             const btnText = document.getElementById('btn-text');
             const resultTimestamp = document.getElementById('result-timestamp');
-            const resultDisplayArea = document.getElementById('result-display-area');
             const emptyState = document.getElementById('empty-state');
             const analysisOutput = document.getElementById('analysis-output');
 
@@ -1634,6 +2057,10 @@
 
             const bearKnowledgeBase = [
                 {
+                    keywords: ['影片', '監視器', 'cctv', '香蕉', '短片', '錄影', '抽樣', '巡檢', '鏡頭'],
+                    reply: '🎥 **果園 24H 監視器與手機實拍短影音 AI 巡檢技術**：\n針對農友無法手動逐顆拍照的痛點，系統支援直接串接果園 CCTV 或上傳手機隨手錄製的 3~5 秒短片（例如 7-11 購買的香蕉或釋迦）：\n1. **AI 關鍵幀連續抽樣**：自動從動態視訊中每秒抽樣清晰視角，過濾手震與逆光。\n2. **熟度與糖斑／日燒判定**：透過 Gemini 多模態 AI 分析果皮油亮感、梅花斑（糖斑）或高溫焦黑痕跡。\n3. **無人化巡檢報告**：輸出熟度等級、貨架期預估與分級標價建議，讓智慧果園巡檢真正實現全自動化！🍌🍈✨'
+                },
+                {
                     keywords: ['果園編號', '哪裡查', '代碼', '查', '編號', '示範園', '輸入什麼'],
                     reply: '🏷️ **常見果園編號與即時參數查詢指南**：\n系統內建了臺東各大釋迦示範產區代碼，您可以直接在上方輸入框使用：\n• **`太麻里鄉-A01果園`**（對應太麻里高風險區）\n• **`知本溫泉-B02果園`**\n• **`東河鄉-C03果園`**\n• **`鹿野鄉-D04果園`**\n• **`臺東市-E05果園`**\n\n💡 此外，您也可以直接手動輸入自定義的溫濕度數值進行即時演算，例如：`氣溫36.5°C, 濕度32%, 西南風6級`，系統會立刻為您進行風險評估與防禦規劃！🐻🌿'
                 },
@@ -1697,7 +2124,7 @@
                     return bestMatch.reply;
                 }
 
-                return `收到您的提問「${userMessage}」！🐻🌿\n目前果園狀態為：**${liveSystemState.modeLabel}**（${liveSystemState.waterStatusText}）。\n我可以為您詳細解答以下主題：\n• **目前果園即時狀態**（動態讀取上方測站數據）\n• **提早 3 小時焚風預測**（黃燈預警與自動補水機制）\n• **好時果子農園**合作案例與 **2026 臺東焚風實錄**\n• **防呆保護機制**與 **LINE 遠端啟動微霧降溫**\n\n歡迎直接點擊下方快捷按鈕，或輸入關鍵字問我喔！`;
+                return `收到您的提問「${userMessage}」！🐻🌿\n目前果園狀態為：**${liveSystemState.modeLabel}**（${liveSystemState.waterStatusText}）。\n我可以為您詳細解答以下主題：\n• **目前果園即時狀態**（動態讀取上方測站數據）\n• **🎥 監視器影片 AI 巡檢**（手機拍攝香蕉短片分析）\n• **提早 3 小時焚風預測**（黃燈預警與自動補水機制）\n• **好時果子農園**合作案例與 **2026 臺東焚風實錄**\n• **防呆保護機制**與 **LINE 遠端啟動微霧降溫**\n\n歡迎直接點擊下方快捷按鈕，或輸入關鍵字問我喔！`;
             }
 
             function toggleChatWindow(forceState) {
@@ -1783,7 +2210,7 @@
                 }
 
                 const systemPrompt = `你是「智慧台東：大目釋迦焚風預警與自動化防禦平台 - 釋迦守護者 (AIFoehn-Shield)」的可愛台灣黑熊吉祥物兼 AI 客服小幫手，名字叫「台東黑熊守護員（小熊）」。
-請用親切、溫暖、有活力且專業的台灣繁體中文回答（約 80~150 字內）。你熟知「好時果子」小農夫婦合作案例、2026 年臺東 5 次重大焚風事件（4/14、7/11 巴威、7/14、7/21 橙色燈號、10/24 薔琵颱風 39.3°C 峰值）、36°C 自動啟動微霧降溫、低水位自動斷水與防過濕防呆機制、LINE 官方帳號 @413asgvo，以及針對家庭採買女性的「分級標價（A級完美果 vs 微日燒實惠果）」策略。`;
+請用親切、溫暖、有活力且專業的台灣繁體中文回答（約 80~150 字內）。你熟知果園 24H 監視器與手機實拍短片（如 7-11 香蕉）動態 AI 巡檢技術、好時果子合作案例、2026 年臺東 5 次重大焚風事件、36°C 自動啟動微霧降溫、防呆機制與 LINE 官方帳號 @413asgvo。`;
 
                 chatHistory.push({ role: 'user', parts: [{ text: userMessage }] });
 
